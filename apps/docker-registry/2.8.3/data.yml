@@ -16,7 +16,7 @@ additionalProperties:
           required: true
           rule: paramPort
           type: number
-        - default: '*'
+        - default: *
           edit: true
           envKey: Access-Control-Allow-Origin
           labelEn: Access-Control-Allow-Origin
