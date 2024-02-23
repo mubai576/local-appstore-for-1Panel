@@ -1,0 +1,48 @@
+version: '3'
+services:
+  registry-server:
+    image: registry:2.8.3
+    container_name: ${CONTAINER_NAME}-server
+    restart: always
+    environment:
+      REGISTRY_HTTP_HEADERS_Access-Control-Allow-Origin: '[${Access-Control-Allow-Origin}]'
+      REGISTRY_HTTP_HEADERS_Access-Control-Allow-Methods: '[HEAD,GET,OPTIONS,DELETE]'
+      REGISTRY_HTTP_HEADERS_Access-Control-Allow-Credentials: '[true]'
+      REGISTRY_HTTP_HEADERS_Access-Control-Allow-Headers: '[Authorization,Accept,Cache-Control]'
+      REGISTRY_HTTP_HEADERS_Access-Control-Expose-Headers: '[Docker-Content-Digest]'
+      REGISTRY_STORAGE_DELETE_ENABLED: 'true'
+    networks:
+      - 1panel-network
+    ports:
+      - ${SERVER_PORT_HTTP}:5000
+    volumes:
+      - ./data:/var/lib/registry
+    labels:
+      createdBy: "Apps"
+
+  registry-ui:
+    image: joxit/docker-registry-ui:main
+    container_name: ${CONTAINER_NAME}-ui
+    restart: always
+    environment:
+      - SINGLE_REGISTRY=true
+      - REGISTRY_TITLE=Docker Registry UI
+      - DELETE_IMAGES=true
+      - SHOW_CONTENT_DIGEST=true
+      - NGINX_PROXY_PASS_URL=http://registry-server:${SERVER_PORT_HTTP}
+      - SHOW_CATALOG_NB_TAGS=true
+      - CATALOG_MIN_BRANCHES=1
+      - CATALOG_MAX_BRANCHES=1
+      - TAGLIST_PAGE_SIZE=100
+      - REGISTRY_SECURED=false
+      - CATALOG_ELEMENTS_LIMIT=1000
+    networks:
+      - 1panel-network
+    ports:
+      - ${SERVER_PORT_HTTP}:80
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
