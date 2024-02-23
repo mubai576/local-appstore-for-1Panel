@@ -39,7 +39,7 @@ services:
     networks:
       - 1panel-network
     ports:
-      - ${SERVER_PORT_HTTP}:80
+      - ${UI_PORT_HTTP}:80
     labels:
       createdBy: "Apps"
 
