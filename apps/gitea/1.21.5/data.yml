@@ -50,8 +50,8 @@ additionalProperties:
           labelEn: Gitea Domain
           labelZh: Gitea 域名
           required: true
-          rule: paramPort
-          type: number
+          rule: paramCommon
+          type: text
         - default: RUNNER_REGISTRATION_TOKEN
           envKey: GITEA_RUNNER_REGISTRATION_TOKEN
           labelEn: Runner Registration Token
