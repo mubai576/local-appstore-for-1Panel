@@ -45,3 +45,24 @@ additionalProperties:
           required: true
           rule: paramPort
           type: number
+        - default: example.com
+          envKey: GITEA_DOMAIN
+          labelEn: Gitea Domain
+          labelZh: Gitea 域名
+          required: true
+          rule: paramPort
+          type: number
+        - default: RUNNER_REGISTRATION_TOKEN
+          envKey: GITEA_RUNNER_REGISTRATION_TOKEN
+          labelEn: Runner Registration Token
+          labelZh: Runner 注册 Token
+          required: false
+          rule: paramCommon
+          type: text
+        - default: bridge
+          envKey: CONTAINER_NETWORK
+          labelEn: Docker  Network
+          labelZh: Docker 网络
+          required: true
+          rule: paramCommon
+          type: text
