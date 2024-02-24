@@ -9,7 +9,7 @@ services:
       - GITEA_RUNNER_REGISTRATION_TOKEN=${RUNNER_REGISTRATION_TOKEN}
       - GITEA_RUNNER_JOB_CONTAINER_NETWORK=${CONTAINER_NETWORK}
       # add.1 容器内指定配置文件路径
-      - CONFIG_FILE=/config/config.yaml
+      # - CONFIG_FILE=/config/config.yaml
     restart: always
     networks:
       - 1panel-network
