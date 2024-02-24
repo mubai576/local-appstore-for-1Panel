@@ -21,3 +21,11 @@ Gitea Actions与GitHub Actions相似且兼容，它的名称也受到了它的�
 Gitea Actions仍然在开发中，因此可能存在一些错误和缺失的功能。 并且在稳定版本（v1.20或更高版本）之前可能会进行一些重大的更改。
 
 如果情况发生变化，我们将在此处进行更新。 因此，请在其他地方找到过时文章时参考此处的内容。
+
+## 配置
+配置文件位于安装后的 config/config.yml 中。 
+
+`container.network` 需要修改为 gitea-runner 对应的 docker 网络，否则会导致缓存服务无法连接
+`runner.capacity` 为 gitea-runner 可并发执行的任务数量，视服务器配置修改，过高的并发数可能导致服务崩溃
+
+请参考[配置文档](https://docs.gitea.io/en-us/config-cheat-sheet/)获取更多信息。

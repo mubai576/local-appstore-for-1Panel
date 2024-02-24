@@ -14,10 +14,3 @@ additionalProperties:
           required: true
           rule: paramCommon
           type: text
-        - default: 1panel-network
-          envKey: CONTAINER_NETWORK
-          labelEn: Docker  Network
-          labelZh: Docker 网络
-          required: true
-          rule: paramCommon
-          type: text
