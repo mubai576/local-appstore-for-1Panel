@@ -14,7 +14,7 @@ services:
     networks:
       - 1panel-network
     volumes:
-      - ./config/config.yaml:/config/config.yaml
+      - ./config:/config
       - ./data:/data
       - ./cache:/root/.cache
       - /var/run/docker.sock:/var/run/docker.sock
