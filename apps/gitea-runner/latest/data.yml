@@ -6,7 +6,7 @@ additionalProperties:
           labelZh: Gitea 服务地址
           required: true
           rule: paramExtUrl
-          type: number
+          type: text
         - default: RUNNER_REGISTRATION_TOKEN
           envKey: GITEA_RUNNER_REGISTRATION_TOKEN
           labelEn: Runner Registration Token
