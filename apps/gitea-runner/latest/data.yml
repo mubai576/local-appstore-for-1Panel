@@ -1,6 +1,7 @@
 additionalProperties:
     formFields:
         - default: https://example.com/
+          edit: true
           envKey: GITEA_SERVER_URL
           labelEn: Gitea Server URL
           labelZh: Gitea 服务地址
@@ -8,6 +9,7 @@ additionalProperties:
           rule: paramExtUrl
           type: text
         - default: RUNNER_REGISTRATION_TOKEN
+          edit: true
           envKey: GITEA_RUNNER_REGISTRATION_TOKEN
           labelEn: Runner Registration Token
           labelZh: Runner 注册 Token
