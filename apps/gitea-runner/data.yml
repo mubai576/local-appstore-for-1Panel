@@ -1,0 +1,20 @@
+name: Gitea-Runner
+tags:
+    - DevOps
+title: Gitea Action 组件
+type: DevOps
+description: Gitea Action 组件
+additionalProperties:
+    key: gitea-runner
+    name: Gitea-Runner
+    tags:
+        - DevOps
+    shortDescZh: Gitea Action 组件
+    shortDescEn: Gitea Action Subassembly
+    type: tool
+    crossVersionUpdate: false
+    limit: 0
+    recommend: 10
+    website: https://gitea.io/
+    github: https://github.com/go-gitea/gitea
+    document: https://docs.gitea.com/zh-cn/usage/actions/overview

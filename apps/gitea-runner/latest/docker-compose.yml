@@ -1,0 +1,26 @@
+version: '3'
+services:
+  gitea-runner:
+    image: gitea/act_runner:latest
+    container_name: default-runner
+    environment:
+      - GITEA_RUNNER_NAME=default-runner
+      - GITEA_INSTANCE_URL=${GITEA_SERVER_URL}
+      - GITEA_RUNNER_REGISTRATION_TOKEN=${RUNNER_REGISTRATION_TOKEN}
+      - GITEA_RUNNER_JOB_CONTAINER_NETWORK=${CONTAINER_NETWORK}
+      # add.1 容器内指定配置文件路径
+      - CONFIG_FILE=/config.yaml
+    restart: always
+    networks:
+      - 1panel-network
+    volumes:
+      - ./config.yaml:/config.yaml
+      - ./data:/data
+      - ./cache:/root/.cache
+      - /var/run/docker.sock:/var/run/docker.sock
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

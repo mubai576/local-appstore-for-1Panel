@@ -1,0 +1,23 @@
+additionalProperties:
+    formFields:
+        - default: https://example.com/
+          envKey: GITEA_SERVER_URL
+          labelEn: Gitea Server URL
+          labelZh: Gitea 服务地址
+          required: true
+          rule: paramExtUrl
+          type: number
+        - default: RUNNER_REGISTRATION_TOKEN
+          envKey: GITEA_RUNNER_REGISTRATION_TOKEN
+          labelEn: Runner Registration Token
+          labelZh: Runner 注册 Token
+          required: true
+          rule: paramCommon
+          type: text
+        - default: 1panel-network
+          envKey: CONTAINER_NETWORK
+          labelEn: Docker  Network
+          labelZh: Docker 网络
+          required: true
+          rule: paramCommon
+          type: text
