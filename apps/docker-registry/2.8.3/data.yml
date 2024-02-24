@@ -2,7 +2,7 @@ additionalProperties:
     formFields:
         - default: 5000
           edit: true
-          envKey: SERVER_PORT_HTTP
+          envKey: PANEL_APP_PORT_SERVER
           labelEn: Server Port
           labelZh: 服务 端口
           required: true
@@ -10,7 +10,7 @@ additionalProperties:
           type: number
         - default: 5001
           edit: true
-          envKey: UI_PORT_HTTP
+          envKey: PANEL_APP_PORT_UI
           labelEn: UI Port
           labelZh: UI 端口
           required: true

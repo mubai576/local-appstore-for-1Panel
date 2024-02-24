@@ -14,7 +14,7 @@ services:
     networks:
       - 1panel-network
     ports:
-      - ${SERVER_PORT_HTTP}:5000
+      - ${PANEL_APP_PORT_SERVER}:5000
     volumes:
       - ./data:/var/lib/registry
     labels:
@@ -29,7 +29,7 @@ services:
       - REGISTRY_TITLE=Docker Registry UI
       - DELETE_IMAGES=true
       - SHOW_CONTENT_DIGEST=true
-      - NGINX_PROXY_PASS_URL=http://registry-server:${SERVER_PORT_HTTP}
+      - NGINX_PROXY_PASS_URL=http://registry-server:${PANEL_APP_PORT_SERVER}
       - SHOW_CATALOG_NB_TAGS=true
       - CATALOG_MIN_BRANCHES=1
       - CATALOG_MAX_BRANCHES=1
@@ -39,7 +39,7 @@ services:
     networks:
       - 1panel-network
     ports:
-      - ${UI_PORT_HTTP}:80
+      - ${PANEL_APP_PORT_UI}:80
     labels:
       createdBy: "Apps"
 
