@@ -1,7 +1,7 @@
 version: '3'
 services:
   elasticsearch:
-    image: elasticsearch:7.17.15
+    image: elasticsearch:7.17.6
     container_name: elasticsearch
     ports:
       - "9200:9200"
@@ -20,7 +20,7 @@ services:
       - 1panel-network
 
   kibana:
-    image: kibana:7.17.15
+    image: kibana:7.17.6
     container_name: kibana
     ports:
       - "5601:5601"
@@ -38,7 +38,7 @@ services:
       - 1panel-network
 
   logstash:
-    image: logstash:7.17.15
+    image: logstash:7.17.6
     container_name: logstash
     ports:
       - "4560:4560"
